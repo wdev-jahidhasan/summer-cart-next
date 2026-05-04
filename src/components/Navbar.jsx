@@ -2,6 +2,7 @@ import React from 'react';
 import { IoHomeOutline } from "react-icons/io5";
 import { AiOutlineProduct } from "react-icons/ai";
 import { CgProfile } from "react-icons/cg";
+import Link from 'next/link';
 
 const Navbar = () => {
   return (
@@ -15,18 +16,18 @@ const Navbar = () => {
           <ul
             tabIndex="-1"
             className="menu menu-lg dropdown-content bg-base-100 rounded-box z-1 mt-3 w-40 p-2 shadow">
-            <li><a><IoHomeOutline /> Home</a></li>
-            <li><a><AiOutlineProduct /> Products</a></li>
-            <li><a><CgProfile /> My Profile</a></li>
+            <li><Link href="/"><IoHomeOutline /> Home</Link></li>
+            <li><Link href="/products"><AiOutlineProduct /> Products</Link></li>
+            <li><Link href="/profile"><CgProfile /> My Profile</Link></li>
           </ul>
         </div>
         <a><span className='text-yellow-500 font-bold text-xl md:text-3xl'>Summer</span><span className=' text-sky-500 font-bold text-xl md:text-3xl' >Cart</span></a>
       </div>
       <div className="navbar-end hidden lg:flex">
         <ul className="menu menu-horizontal px-1 gap-3">
-          <li><button className='font-semibold text-lg btn btn-soft btn-warning'><IoHomeOutline /> Home</button></li>
-          <li><button className='font-semibold text-lg btn btn-soft btn-warning'><AiOutlineProduct /> Products</button></li>
-          <li><button className='font-semibold text-lg btn btn-soft btn-warning'><CgProfile /> My Profile</button></li>
+          <li><Link href="/" className='font-semibold text-lg btn btn-soft btn-warning'><IoHomeOutline /> Home</Link></li>
+          <li><Link href="/products" className='font-semibold text-lg btn btn-soft btn-warning'><AiOutlineProduct /> Products</Link></li>
+          <li><Link href="/profile" className='font-semibold text-lg btn btn-soft btn-warning'><CgProfile /> My Profile</Link></li>
         </ul>
       </div>
        </div>
