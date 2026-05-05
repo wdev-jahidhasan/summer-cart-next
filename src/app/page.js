@@ -1,5 +1,6 @@
 import Brands from "@/components/Brands";
 import Carousel from "@/components/Carousel";
+import Tips from "@/components/Tips";
 import Image from "next/image";
 
 export default function Home() {
@@ -7,7 +8,7 @@ export default function Home() {
     <>
     <Carousel></Carousel>
     <h1 className="text-center font-bold text-5xl">Popular Products</h1>
-    <h1 className="text-center font-bold text-5xl text-green-300 my-5">Summer Care Tips</h1>
+    <Tips></Tips>
     <Brands></Brands>
     </>
   );
