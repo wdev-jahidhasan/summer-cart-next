@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 const Navbar = () => {
   return (
-    <div className="w-full bg-base-100 shadow-sm sticky top-0 z-50">
+    <div className="w-full bg-linear-to-br from-orange-100 to-cyan-100 shadow-sm sticky top-0 z-50">
     <div className="navbar px-2 md:px-12 lg:px-24">
       <div className="navbar-start">
         <div className="dropdown">
@@ -25,9 +25,9 @@ const Navbar = () => {
       </div>
       <div className="navbar-end hidden lg:flex">
         <ul className="menu menu-horizontal px-1 gap-3">
-          <li><Link href="/" className='font-semibold text-lg btn btn-soft btn-warning'><IoHomeOutline /> Home</Link></li>
-          <li><Link href="/products" className='font-semibold text-lg btn btn-soft btn-warning'><AiOutlineProduct /> Products</Link></li>
-          <li><Link href="/profile" className='font-semibold text-lg btn btn-soft btn-warning'><CgProfile /> My Profile</Link></li>
+          <li><Link href="/" className='font-semibold text-lg btn btn-warning'><IoHomeOutline /> Home</Link></li>
+          <li><Link href="/products" className='font-semibold text-lg btn btn-warning'><AiOutlineProduct /> Products</Link></li>
+          <li><Link href="/profile" className='font-semibold text-lg btn btn-warning'><CgProfile /> My Profile</Link></li>
         </ul>
       </div>
        </div>

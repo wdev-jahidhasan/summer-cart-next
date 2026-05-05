@@ -4,7 +4,7 @@ import { FaFacebook, FaYoutube } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="footer footer-horizontal footer-center bg-base-200 text-base-content rounded p-10 gap-3">
+    <footer className="footer footer-horizontal footer-center bg-purple-50 text-base-content rounded p-10 gap-3">
       <div>
         <a><span className='text-yellow-500 font-bold text-4xl'>Summer</span><span className=' text-sky-500 font-bold text-4xl' >Cart</span></a>
       </div>
