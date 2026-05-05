@@ -1,0 +1,134 @@
+[
+    {
+        "id": 1,
+        "name": "UV Protection Sunglasses",
+        "brand": "SunGuard",
+        "price": 25.99,
+        "rating": 4.8,
+        "stock": 45,
+        "description": "Premium polarized lenses with 100% UV400 protection and lightweight frames.",
+        "image": "https://images.unsplash.com/photo-1572635196237-14b3f281503f?auto=format&fit=crop&q=80&w=800",
+        "category": "Accessories"
+    },
+    {
+        "id": 2,
+        "name": "Portable Neck Fan",
+        "brand": "CoolBreeze",
+        "price": 32.50,
+        "rating": 4.5,
+        "stock": 120,
+        "description": "Bladeless neck fan with 3 speeds and long-lasting rechargeable battery.",
+        "image": "https://images.unsplash.com/photo-1619234140306-03f4f147ba0d?auto=format&fit=crop&q=80&w=800",
+        "category": "Electronics"
+    },
+    {
+        "id": 3,
+        "name": "Insulated Water Bottle",
+        "brand": "HydroPeak",
+        "price": 19.99,
+        "rating": 4.9,
+        "stock": 85,
+        "description": "Stainless steel vacuum insulated bottle that keeps drinks cold for 24 hours.",
+        "image": "https://images.unsplash.com/photo-1602143394881-22944ea1867c?auto=format&fit=crop&q=80&w=800",
+        "category": "Gear"
+    },
+    {
+        "id": 4,
+        "name": "Wide-Brim Straw Hat",
+        "brand": "IslandStyle",
+        "price": 22.00,
+        "rating": 4.6,
+        "stock": 30,
+        "description": "Breathable straw hat with an adjustable chin strap for beach days.",
+        "image": "https://images.unsplash.com/photo-1521335629791-ce4aec67dd15?auto=format&fit=crop&q=80&w=800",
+        "category": "Accessories"
+    },
+    {
+        "id": 5,
+        "name": "Organic Mineral Sunscreen",
+        "brand": "EcoShield",
+        "price": 14.50,
+        "rating": 4.7,
+        "stock": 200,
+        "description": "SPF 50 zinc oxide formula that is reef-safe and non-greasy.",
+        "image": "https://images.unsplash.com/photo-1556229010-6c3f2c9ca5f8?auto=format&fit=crop&q=80&w=800",
+        "category": "Skincare"
+    },
+    {
+        "id": 6,
+        "name": "Quick-Dry Beach Towel",
+        "brand": "SandFree",
+        "price": 28.00,
+        "rating": 4.4,
+        "stock": 65,
+        "description": "Microfiber towel that repels sand and dries 3x faster than cotton.",
+        "image": "https://images.unsplash.com/photo-1540321528699-2766628c687e?auto=format&fit=crop&q=80&w=800",
+        "category": "Gear"
+    },
+    {
+        "id": 7,
+        "name": "Portable Bluetooth Speaker",
+        "brand": "WaveBeat",
+        "price": 45.00,
+        "rating": 4.8,
+        "stock": 55,
+        "description": "Waterproof IPX7 speaker with deep bass and 12-hour playtime.",
+        "image": "https://images.unsplash.com/photo-1608156639585-b3a032ef9689?auto=format&fit=crop&q=80&w=800",
+        "category": "Electronics"
+    },
+    {
+        "id": 8,
+        "name": "Inflatable Pool Float",
+        "brand": "LoungeLife",
+        "price": 35.99,
+        "rating": 4.3,
+        "stock": 40,
+        "description": "Giant flamingo-shaped float made from heavy-duty vinyl.",
+        "image": "https://images.unsplash.com/photo-1562184647-7590d9842a17?auto=format&fit=crop&q=80&w=800",
+        "category": "Leisure"
+    },
+    {
+        "id": 9,
+        "name": "Reusable Ice Packs",
+        "brand": "FrostFlow",
+        "price": 12.00,
+        "rating": 4.6,
+        "stock": 150,
+        "description": "Slim gel packs designed to keep coolers cold for extended periods.",
+        "image": "https://images.unsplash.com/photo-1582298538104-fe2e74c27f59?auto=format&fit=crop&q=80&w=800",
+        "category": "Gear"
+    },
+    {
+        "id": 10,
+        "name": "Canvas Tote Bag",
+        "brand": "EcoCarry",
+        "price": 18.00,
+        "rating": 4.5,
+        "stock": 95,
+        "description": "Large capacity canvas bag with reinforced handles for grocery or beach trips.",
+        "image": "https://images.unsplash.com/photo-1544816153-12ad5d714b21?auto=format&fit=crop&q=80&w=800",
+        "category": "Accessories"
+    },
+    {
+        "id": 11,
+        "name": "Waterproof Phone Pouch",
+        "brand": "AquaLock",
+        "price": 11.99,
+        "rating": 4.7,
+        "stock": 300,
+        "description": "Universal dry bag that allows touchscreen use while underwater.",
+        "image": "https://images.unsplash.com/photo-1548611635-b6e78bb14ba3?auto=format&fit=crop&q=80&w=800",
+        "category": "Electronics"
+    },
+    {
+        "id": 12,
+        "name": "Soft-Sided Cooler Bag",
+        "brand": "ChillerBox",
+        "price": 42.00,
+        "rating": 4.9,
+        "stock": 25,
+        "description": "Leak-proof insulated bag that holds up to 24 cans with ease.",
+        "image": "https://images.unsplash.com/photo-1559131397-f94da358f7ca?auto=format&fit=crop&q=80&w=800",
+        "category": "Gear"
+    }
+]
