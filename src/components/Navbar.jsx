@@ -25,9 +25,9 @@ const Navbar = () => {
       </div>
       <div className="navbar-end hidden lg:flex">
         <ul className="menu menu-horizontal px-1 gap-3">
-          <li><Link href="/" className='font-semibold text-lg btn btn-warning'><IoHomeOutline /> Home</Link></li>
-          <li><Link href="/products" className='font-semibold text-lg btn btn-warning'><AiOutlineProduct /> Products</Link></li>
-          <li><Link href="/profile" className='font-semibold text-lg btn btn-warning'><CgProfile /> My Profile</Link></li>
+          <li><Link href="/" className='font-semibold text-lg btn bg-yellow-300'><IoHomeOutline /> Home</Link></li>
+          <li><Link href="/products" className='font-semibold text-lg btn bg-yellow-300'><AiOutlineProduct /> Products</Link></li>
+          <li><Link href="/profile" className='font-semibold text-lg btn bg-yellow-300'><CgProfile /> My Profile</Link></li>
         </ul>
       </div>
        </div>
