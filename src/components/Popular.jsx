@@ -6,7 +6,7 @@ export default function ProductsPage() {
   const { products, loading } = useContext(ProductContext);
   if (loading) return <p className="text-center p-10 text-xl font-semibold text-yellow-400">Loading summer products...</p>;
 
-  const popularIds = [1, 5, 11]; 
+  const popularIds = [1, 5, 11];
 
   const featuredProducts = products.filter((product) =>
     popularIds.includes(product.id)
@@ -17,22 +17,27 @@ export default function ProductsPage() {
       <h1 className="text-center font-bold text-3xl md:text-4xl text-teal-400 mb-10">Popular Products</h1>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {featuredProducts.map((product) => (
-          <div key={product.id} className="border border-purple-300 bg-linear-to-br from-sky-100 to-yellow-50 p-4 rounded-xl shadow-sm">
-            <Image
-              src={product.image}
-              alt={product.name}
-              width={300}
-              height={300}
-              className="w-full h-48 object-cover rounded-lg"
-            />
-            <h2 className="font-bold mt-2 text-lg">{product.name}</h2>
-            <p className="text-teal-500 text-sm">Brand: {product.brand}</p>
-            <p className="text-slate-500 text-sm">Rating: {product.rating}</p>
-            <div className="flex justify-between">
-              <p className="text-orange-600 font-bold mt-1">${product.price}</p>
-              <button className="btn bg-yellow-300">Details</button>
-            </div>
+          <div
+            key={product.id}
+            className="animate-pulse hover:animate-none transition-all"
+          >
+            <div key={product.id} className="border border-purple-300 bg-linear-to-br from-sky-100 to-yellow-50 p-4 rounded-xl shadow-sm">
+              <Image
+                src={product.image}
+                alt={product.name}
+                width={300}
+                height={300}
+                className="w-full h-48 object-cover rounded-lg"
+              />
+              <h2 className="font-bold mt-2 text-lg">{product.name}</h2>
+              <p className="text-teal-500 text-sm">Brand: {product.brand}</p>
+              <p className="text-slate-500 text-sm">Rating: {product.rating}</p>
+              <div className="flex justify-between">
+                <p className="text-orange-600 font-bold mt-1">${product.price}</p>
+                <button className="btn bg-yellow-300">Details</button>
+              </div>
 
+            </div>
           </div>
         ))}
       </div>
