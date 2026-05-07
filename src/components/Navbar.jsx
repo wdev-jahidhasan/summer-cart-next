@@ -40,6 +40,8 @@ const Navbar = () => {
             <li><Link href="/profile" className={`font-semibold text-lg btn ${getActiveClass("/profile")}`}><CgProfile /> My Profile</Link></li>
           </ul>
         </div>
+
+        {/* <div className='flex justify-end'>Avatar/login button</div> */}
       </div>
     </div>
   );
