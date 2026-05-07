@@ -7,7 +7,7 @@ import { FaBoxOpen } from "react-icons/fa";
 const Brands = () => {
   return (
     <div className='my-12'>
-      <h1 className="text-center font-bold text-4xl md:text-5xl text-purple-500 mb-10">Top Brands</h1>
+      <h1 className="text-center font-bold text-3xl md:text-4xl text-purple-500 mb-10">Top Brands</h1>
       <div className='w-80 mx-auto grid grid-cols-2 gap-5 text-center my-5'>
         <a className='border border-purple-400 rounded-lg p-5'><span className='text-green-500 font-bold text-xl md:text-3xl'>H</span><span className=' text-pink-500 font-bold text-xl md:text-3xl' >Peak <FaThinkPeaks /></span></a>
         <a className='border border-purple-400 rounded-lg p-5'><span className='text-yellow-500 font-bold text-xl md:text-3xl'><FaSun />Sun</span><span className=' text-orange-500 font-bold text-xl md:text-3xl' >G</span></a>

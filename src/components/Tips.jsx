@@ -2,8 +2,8 @@ import React from 'react';
 
 const Tips = () => {
   return (
-    <div className='w-11/12 md:w-3/4 mx-auto my-10 text-center'>
-      <h1 className="text-center font-bold text-4xl md:text-5xl text-yellow-400 mb-10">Summer Care Tips</h1>
+    <div className='w-11/12 md:w-3/4 mx-auto my-3 text-center'>
+      <h1 className="text-center font-bold text-3xl md:text-4xl text-yellow-400 mb-10">Summer Care Tips</h1>
     <div className='grid grid-cols-1 md:grid-cols-2 gap-5'>
       {/* tips 1 */}
       <div className='bg-linear-to-br from-sky-100 to-yellow-50 p-3 rounded-xl py-8 space-y-6 shadow-sm'>
