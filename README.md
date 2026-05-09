@@ -2,6 +2,9 @@
 
 ---
 
+## 🌐 Live Link
+https://summer-cart-next-tvg3.vercel.app/
+
 ## 📌 Project Description
 **Summer Cart** is a summer-themed eCommerce web application where users can browse seasonal products, view details, and place orders after authentication.
 
