@@ -1,8 +1,5 @@
 # ☀️ Summer Cart – Summer Essentials Store
 
-## 🌐 Live Link
-
-
 ---
 
 ## 📌 Project Description
