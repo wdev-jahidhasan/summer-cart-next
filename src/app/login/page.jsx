@@ -6,6 +6,7 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { toast, ToastContainer } from "react-toastify";
 import { useSearchParams, useRouter } from "next/navigation";
+import { FaGoogle } from 'react-icons/fa6';
 
 
 const Page = () => {
@@ -27,7 +28,7 @@ const Page = () => {
 
     if (error) {
       toast.error("Wrong Credentials");
-       return;
+      return;
     }
 
     if (res) {
@@ -36,17 +37,24 @@ const Page = () => {
     }
   };
 
+  const handleGoogleSignin = async () => {
+    const data = await authClient.signIn.social({
+      provider: "google",
+      callbackURL: redirect,
+    });
+  }
+
   return (
     <>
       <ToastContainer />
 
-      <div className='w-4/5 mx-auto my-6 flex justify-center items-center text-center'>
-        
+      <div className='w-11/12 mx-auto my-6 flex justify-center items-center text-center'>
+
         <form
           onSubmit={handleSubmit(handleLogin)}
           className="fieldset bg-linear-to-br from-sky-200 to-yellow-100 border-base-300 rounded-box w-full max-w-md border p-6 flex flex-col items-center"
         >
-          
+
           <legend className="fieldset-legend text-2xl font-bold mb-4">
             Login
           </legend>
@@ -89,6 +97,14 @@ const Page = () => {
           </button>
 
           <p className='mt-6'>Don't Have Account?</p>
+
+          <button
+            type="button"
+            onClick={handleGoogleSignin}
+            className="btn bg-white text-black border-[#e5e5e5] w-2/3"
+          ><FaGoogle />
+            Login with Google
+          </button>
 
           <Link href="/signUp" className='btn btn-accent w-2/3 mt-2'>
             Sign UP
