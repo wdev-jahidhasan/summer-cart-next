@@ -17,7 +17,7 @@ export default async function ProductDetails({ params }) {
   }
 
   return (
-    <div className='w-11/12 md:w-3/5 mx-auto my-10 font-sans'>
+    <div className='w-11/12 md:w-2/5 mx-auto my-10 font-sans'>
       <div className="bg-white border border-gray-200 rounded-2xl shadow-xl overflow-hidden transition-all hover:shadow-2xl">
 
         <div className="relative w-full h-48 lg:h-80 bg-gray-100">
@@ -58,7 +58,7 @@ export default async function ProductDetails({ params }) {
 
           <div className="flex flex-col sm:flex-row gap-3">
             <Link href="/products" className="flex-1">
-              <button className="w-full bg-teal-600 text-white font-bold py-3 rounded-lg hover:bg-teal-50 transition-colors">
+              <button className="w-full bg-teal-600 text-white font-bold py-3 rounded-lg hover:bg-teal-500 transition-colors">
                 Back to Shop
               </button>
             </Link>
