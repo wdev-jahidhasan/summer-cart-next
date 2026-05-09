@@ -5,9 +5,13 @@ import { ProductContext } from "@/components/ProductContext";
 import Image from "next/image";
 import { animated, useTrail } from "@react-spring/web";
 import Link from "next/link";
+import { authClient } from "@/lib/auth-client";
 
 export default function ProductsPage() {
   const { products, loading } = useContext(ProductContext);
+
+  const { data: session, isPending } = authClient.useSession();
+  const user = session?.user;
 
   const popularIds = [1, 5, 11];
 
@@ -17,12 +21,12 @@ export default function ProductsPage() {
 
   const [toggle, setToggle] = useState(true);
   useEffect(() => {
-  const interval = setInterval(() => {
-    setToggle((prev) => !prev);
-  }, 1500);
+    const interval = setInterval(() => {
+      setToggle((prev) => !prev);
+    }, 1500);
 
-  return () => clearInterval(interval);
-}, []);
+    return () => clearInterval(interval);
+  }, []);
 
   const trail = useTrail(featuredProducts.length, {
     from: {
@@ -43,9 +47,9 @@ export default function ProductsPage() {
   if (loading) {
     return (
       <p className="text-center p-10 text-xl font-semibold text-yellow-400">Loading summer products...</p>
-    ); 
+    );
   }
-    
+
 
 
   return (
@@ -55,28 +59,30 @@ export default function ProductsPage() {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {trail.map((style, index) => {
           const product = featuredProducts[index];
-          
 
-          return(
+
+          return (
             <animated.div
               key={product.id}
               style={style}
               className="border border-purple-300 bg-linear-to-br from-sky-100 to-yellow-50 p-4 rounded-xl shadow-md"
             >
               <Image
-                  src={product.image}
-                  alt={product.name}
-                  width={300}
-                  height={300}
-                  className="w-full h-48 object-cover rounded-lg"
-                />
-                <h2 className="font-bold mt-2 text-lg">{product.name}</h2>
-                <p className="text-teal-500 text-sm">Brand: {product.brand}</p>
-                <p className="text-slate-500 text-sm">Rating: {product.rating}</p>
-                <div className="flex justify-between">
-                  <p className="text-orange-600 font-bold mt-1">${product.price}</p>
-                  <Link href={`/productDetails/${product.id}`} className="btn bg-yellow-300">Details</Link>
-                </div>
+                src={product.image}
+                alt={product.name}
+                width={300}
+                height={300}
+                className="w-full h-48 object-cover rounded-lg"
+              />
+              <h2 className="font-bold mt-2 text-lg">{product.name}</h2>
+              <p className="text-teal-500 text-sm">Brand: {product.brand}</p>
+              <p className="text-slate-500 text-sm">Rating: {product.rating}</p>
+              <div className="flex justify-between">
+                <p className="text-orange-600 font-bold mt-1">${product.price}</p>
+                <Link href={user ? `/productDetails/${product.id}`
+                  : `/login?redirect=/productDetails/${product.id}`}
+                  className="btn bg-yellow-300">Details</Link>
+              </div>
             </animated.div>
           );
         })}

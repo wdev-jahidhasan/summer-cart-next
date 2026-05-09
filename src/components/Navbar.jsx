@@ -47,7 +47,7 @@ const Navbar = () => {
 
             <li><Link href="/products" className={`font-semibold text-lg btn ${getActiveClass("/products")}`}><AiOutlineProduct /> Products</Link></li>
 
-            <li><Link href= {session ? "/profile" : "/login"} className={`font-semibold text-lg btn ${getActiveClass("/login")}`}><CgProfile /> My Profile</Link></li>
+            <li><Link href= {session ? "/profile" : "/login"} className={`font-semibold text-lg btn ${getActiveClass("/profile")}`}><CgProfile /> My Profile</Link></li>
           </ul>
         </div>
 
@@ -62,7 +62,12 @@ const Navbar = () => {
             className="rounded-full"
           />
           <button className="font-semibold text-lg" 
-          onClick={async () => await authClient.signOut()}>Logout</button>
+          onClick=
+          {async () => {
+          await authClient.signOut();
+          window.location.href = "/";
+          }}
+          >Logout</button>
         </div>) : (
           <Link className="font-semibold text-lg" href={ "/login" }>Login</Link>
         )}

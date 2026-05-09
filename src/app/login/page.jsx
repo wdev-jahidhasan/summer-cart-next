@@ -5,26 +5,35 @@ import Link from 'next/link';
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { toast, ToastContainer } from "react-toastify";
+import { useSearchParams, useRouter } from "next/navigation";
+
 
 const Page = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();
+
+  const searchParams = useSearchParams();
+  const router = useRouter();
+
+  const redirect = searchParams.get("redirect") || "/profile";
 
   const handleLogin = async (data) => {
     const { data: res, error } = await authClient.signIn.email({
       email: data.email,
       password: data.password,
       rememberMe: true,
-      callbackURL: "/profile",
+      // callbackURL: "/profile",
     });
 
     console.log(res, error);
 
     if (error) {
       toast.error("Wrong Credentials");
+       return;
     }
 
     if (res) {
       toast.success("Login Successful");
+      router.push(redirect);
     }
   };
 

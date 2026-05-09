@@ -3,7 +3,13 @@ import { useContext } from "react";
 import { ProductContext } from "@/components/ProductContext";
 import Image from "next/image";
 import Link from "next/link";
+import { authClient } from "@/lib/auth-client";
+
 export default function ProductsPage() {
+
+  const { data: session, isPending } = authClient.useSession();
+    const user = session?.user;
+
   const { products, loading } = useContext(ProductContext);
   if (loading) return <p className="text-center p-10 text-xl font-semibold text-yellow-400">Loading summer products...</p>;
   return (
@@ -24,7 +30,9 @@ export default function ProductsPage() {
             <p className="text-slate-500 text-sm">Rating: {product.rating}</p>
             <div className="flex justify-between">
               <p className="text-orange-600 font-bold mt-1">${product.price}</p>
-              <Link href={`/productDetails/${product.id}`} className="btn bg-yellow-300">Details</Link>
+              <Link 
+              href={user ? `/productDetails/${product.id}` 
+              : `/login?redirect=/productDetails/${product.id}` } className="btn bg-yellow-300">Details</Link>
             </div>
 
           </div>
