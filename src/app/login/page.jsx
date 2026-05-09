@@ -1,56 +1,95 @@
 'use client';
+
+import { authClient } from '@/lib/auth-client';
 import Link from 'next/link';
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import { toast, ToastContainer } from "react-toastify";
 
-const page = () => {
-  const {register, handleSubmit, formState: {errors}} = useForm();
-  
+const Page = () => {
+  const { register, handleSubmit, formState: { errors } } = useForm();
 
-  const handleLogin = (data) => {
-  }
+  const handleLogin = async (data) => {
+    const { data: res, error } = await authClient.signIn.email({
+      email: data.email,
+      password: data.password,
+      rememberMe: true,
+      callbackURL: "/profile",
+    });
+
+    console.log(res, error);
+
+    if (error) {
+      toast.error("Wrong Credentials");
+    }
+
+    if (res) {
+      toast.success("Login Successful");
+    }
+  };
 
   return (
-    <div className='w-4/5 mx-auto my-6 flex justify-center items-center text-center'>
-      
-      <form onSubmit={handleSubmit(handleLogin)} className="fieldset bg-linear-to-br from-sky-200 to-yellow-100 border-base-300 rounded-box w-full max-w-md border p-6 flex flex-col items-center">
+    <>
+      <ToastContainer />
+
+      <div className='w-4/5 mx-auto my-6 flex justify-center items-center text-center'>
         
-        <legend className="fieldset-legend text-2xl font-bold mb-4">Login</legend>
+        <form
+          onSubmit={handleSubmit(handleLogin)}
+          className="fieldset bg-linear-to-br from-sky-200 to-yellow-100 border-base-300 rounded-box w-full max-w-md border p-6 flex flex-col items-center"
+        >
+          
+          <legend className="fieldset-legend text-2xl font-bold mb-4">
+            Login
+          </legend>
 
-        <label className="label text-lg self-start"> Email</label>
-        <input
-          type="email"
-          className="input w-full"
-          placeholder="Email"
-          {...register("email", {required: "Write your email"})}
-        />
-        {errors.email && <p className='text-red-500 font-semibold'>{errors.email.message}</p>}
+          <label className="label text-lg self-start">Email</label>
+          <input
+            type="email"
+            className="input w-full"
+            placeholder="Email"
+            {...register("email", { required: "Write your email" })}
+          />
+          {errors.email && (
+            <p className='text-red-500 font-semibold'>
+              {errors.email.message}
+            </p>
+          )}
 
-        <label className="label text-lg self-start mt-3"> Password
-        </label>
+          <label className="label text-lg self-start mt-3">
+            Password
+          </label>
 
-        <input
-          type="password"
-          className="input w-full"
-          placeholder="Password"
-          {...register("password", {required: "Write your password"})}
-        />
-        {errors.password && <p className='text-red-500 font-semibold'>{errors.password.message}</p>}
+          <input
+            type="password"
+            className="input w-full"
+            placeholder="Password"
+            {...register("password", { required: "Write your password" })}
+          />
 
-        <button type="submit" className="btn btn-warning w-2/3 mt-5"> Login
-        </button>
+          {errors.password && (
+            <p className='text-red-500 font-semibold'>
+              {errors.password.message}
+            </p>
+          )}
 
-        <p className='mt-6'>Don't Have Account?</p>
+          <button
+            type="submit"
+            className="btn btn-warning w-2/3 mt-5"
+          >
+            Login
+          </button>
 
-        <Link
-          href="/signUp"
-          className='btn btn-accent w-2/3 mt-2'
-        > Sign UP
-        </Link>
+          <p className='mt-6'>Don't Have Account?</p>
 
-      </form>
-    </div>
+          <Link href="/signUp" className='btn btn-accent w-2/3 mt-2'>
+            Sign UP
+          </Link>
+
+        </form>
+      </div>
+    </>
   );
 };
 
-export default page;
+export default Page;
