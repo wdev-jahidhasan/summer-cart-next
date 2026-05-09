@@ -44,30 +44,31 @@ const Navbar = () => {
 
             <li><Link href="/products" className={`font-semibold text-lg btn ${getActiveClass("/products")}`}><AiOutlineProduct /> Products</Link></li>
 
-            <li><Link href= {user ? "/profile" : "/login"} className={`font-semibold text-lg btn ${getActiveClass("/profile")}`}><CgProfile /> My Profile</Link></li>
+            <li><Link href={user ? "/profile" : "/login"} className={`font-semibold text-lg btn ${getActiveClass("/profile")}`}><CgProfile /> My Profile</Link></li>
           </ul>
         </div>
 
         {isPending ? (<span className="loading loading-dots loading-xl"></span>
         ) : user ?
-        (<div className="flex items-center gap-3">
-          <Image
-            src={user?.image || "/avatar.png"}
-            alt="user avatar"
-            width={48}
-            height={48}
-            className="rounded-full"
-          />
-          <button className="font-semibold text-lg" 
-          onClick=
-          {async () => {
-          await authClient.signOut();
-          window.location.href = "/";
-          }}
-          >Logout</button>
-        </div>) : (
-          <Link className="font-semibold text-lg" href={ "/login" }>Login</Link>
-        )}
+          (<div className="flex items-center gap-3">
+            <Image
+              src={user?.image || "/avatar.png"}
+              alt="Profile Picture"
+              width={40}
+              height={40}
+              unoptimized={true}
+              className='rounded-full border border-slate-300 object-cover'
+            />
+            <button className="font-semibold text-lg"
+              onClick=
+              {async () => {
+                await authClient.signOut();
+                window.location.href = "/";
+              }}
+            >Logout</button>
+          </div>) : (
+            <Link className="font-semibold text-lg" href={"/login"}>Login</Link>
+          )}
 
       </div>
     </div>

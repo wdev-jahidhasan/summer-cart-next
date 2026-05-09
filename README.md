@@ -1,36 +1,76 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# ☀️ Summer Cart – Summer Essentials Store
 
-## Getting Started
+## 🌐 Live Link
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 📌 Project Description
+**Summer Cart** is a summer-themed eCommerce web application where users can browse seasonal products, view details, and place orders after authentication.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🚀 Features
 
-## Learn More
+- Product listing from JSON data
+- Product details page (protected route)
+- User authentication (Login/Register)
+- Google social login
+- User profile page
+- Fully responsive design (Mobile, Tablet, Desktop)
+- Navbar & Footer layout system
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🔐 Authentication
+- Email & Password login
+- Google login
+- Protected routes (Product Details & Profile)
+- Redirect after login/register
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 📦 Pages
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Home Page
+- Hero banner (summer offers)
+- Popular products (3 items)
+- Summer tips section
+- Top brands section
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Products Page
+- Product cards from JSON data
+- Name, image, price, rating
+- View details button
+
+### Product Details (Protected)
+- Full product information
+- Only accessible after login
+
+### Login / Register
+- Form-based authentication
+- Google login option
+- Redirect handling
+
+### My Profile (Bonus)
+- User info display
+- Update name & photo
+
+---
+
+## 🛠 Tech Stack
+
+- Next.js
+- Tailwind CSS
+- DaisyUI
+- BetterAuth
+- React Toast
+
+---
+
+## 📱 Responsiveness
+- Mobile friendly
+- Tablet optimized
+- Desktop supported
+
+---
