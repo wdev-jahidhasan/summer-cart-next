@@ -14,14 +14,13 @@ const Page = () => {
   const searchParams = useSearchParams();
   const router = useRouter();
 
-  const redirect = searchParams.get("redirect") || "/profile";
+  const redirect = searchParams.get("redirect") || "/";
 
   const handleLogin = async (data) => {
     const { data: res, error } = await authClient.signIn.email({
       email: data.email,
       password: data.password,
       rememberMe: true,
-      // callbackURL: "/profile",
     });
 
     console.log(res, error);

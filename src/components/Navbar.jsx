@@ -47,7 +47,7 @@ const Navbar = () => {
 
             <li><Link href="/products" className={`font-semibold text-lg btn ${getActiveClass("/products")}`}><AiOutlineProduct /> Products</Link></li>
 
-            <li><Link href= {session ? "/profile" : "/login"} className={`font-semibold text-lg btn ${getActiveClass("/profile")}`}><CgProfile /> My Profile</Link></li>
+            <li><Link href= {user ? "/profile" : "/login"} className={`font-semibold text-lg btn ${getActiveClass("/profile")}`}><CgProfile /> My Profile</Link></li>
           </ul>
         </div>
 
